@@ -15,6 +15,16 @@
         <button type="submit" class="btn btn-danger">Delete</button>
       </form>
       <p><%= space.description %></p>
+
+      <!-- fix this! -->  <form action="#" method="post">
+          <div class="form-group">
+            <label for="title">Enter Zipcode</label>
+            <input type="number" min="10000" max="99999" class="form-control" name="title" aria-describedby="titleHelp" placeholder="zipcode">
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+
     </main>
 
     <% include ../static/partials/baseScripts.ejs %>
