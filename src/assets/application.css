@@ -1,0 +1,16 @@
+body {
+  padding-top: 54px;
+}
+
+h1 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.pull-left {
+  padding-bottom: 36%;
+}
+
+.btn.btn-success {
+  margin-bottom: 3%;
+}
