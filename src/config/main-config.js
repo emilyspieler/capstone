@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const expressValidator = require("express-validator");
 const session = require("express-session");
 const flash = require("express-flash");
+const express = require("express");
+const async = require('async');
 
 
 module.exports = {
