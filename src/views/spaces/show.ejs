@@ -10,11 +10,16 @@
       <h2>Public Space : <%= space.title %></h2>
 
 
+      <% if(currentUser) { %>
+      <% if(currentUser.isAdmin()) { %>
       <a href="/spaces/<%= space.id %>/edit" class="btn btn-warning">Edit</a>
 
       <form style="display:initial" action="/spaces/<%= space.id %>/destroy" method="post">
         <button type="submit" class="btn btn-danger">Delete</button>
       </form>
+      <% } %>
+      <% } %>
+
       <p><%= space.description %></p>
 
       <!-- fix this!   <form action="#" method="post">

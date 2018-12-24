@@ -13,8 +13,11 @@
       </header>
 
       <h1>I'm looking for...</h1>
-
+       <% if(currentUser) { %>
+       <% if(currentUser.isAdmin()) { %>
       <a href="/spaces/new" class="btn btn-success">New Space</a>
+        <% } %>
+        <% } %>
 
       <ul class="list-group">
 <!-- #1 -->

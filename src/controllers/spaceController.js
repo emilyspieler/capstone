@@ -1,5 +1,6 @@
 const spaceQueries = require("../db/queries.spaces.js");
 const Space = require('../db/models').Space;
+const Authorizer = require("../policies/spaces");
 
 module.exports = {
   index(req, res, next){
@@ -13,8 +14,16 @@ module.exports = {
   },
 
   new(req, res, next){
-      res.render("spaces/new");
-    },
+
+       const authorized = new Authorizer(req.user).new();
+
+         if(authorized) {
+               res.render("spaces/new");
+             } else {
+               req.flash("notice", "You are not authorized to do that.");
+               res.redirect("/spaces");
+             }
+           },
 
   create(req, res, next){
      let newSpace = {
@@ -53,14 +62,23 @@ module.exports = {
      },
 
      edit(req, res, next){
-       spaceQueries.getSpace(req.params.id, (err, space) => {
-         if(err || space == null){
-           res.redirect(404, "/");
-         } else {
-           res.render("spaces/edit", {space});
-         }
-       });
-     },
+
+      topicQueries.getTopic(req.params.id, (err, topic) => {
+        if(err || topic == null){
+          res.redirect(404, "/");
+        } else {
+
+          const authorized = new Authorizer(req.user, space).edit();
+
+          if(authorized){
+            res.render("spaces/edit", {space});
+          } else {
+            req.flash("You are not authorized to do that.")
+            res.redirect(`/spaces/${req.params.id}`)
+          }
+        }
+      });
+    },
 
      update(req, res, next){
 
