@@ -1,4 +1,5 @@
 const Space = require("./models").Space;
+const Authorizer = require("../policies/spaces");
 
 module.exports = {
 

@@ -63,7 +63,7 @@ describe("routes : spaces", () => {
         }
       };
 
-      it("should create a new topic and redirect", () => {
+      it("should create a new space and redirect", () => {
 
 //#1
         request.post(options,
@@ -139,7 +139,7 @@ describe("routes : spaces", () => {
 
    describe("POST /spaces/:id/update", () => {
 
-     it("should update the topic with the given values", () => {
+     it("should update the space with the given values", () => {
         const options = {
            url: `${base}${this.space.id}/update`,
            form: {
