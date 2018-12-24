@@ -49,22 +49,37 @@ module.exports = {
      })
    },
 
-   updateSpace(id, updatedSpace, callback){
-     return Space.findById(id)
+   updateSpace(req, updatedSpace, callback){
+
+     return Space.findById(req.params.id)
      .then((space) => {
+
+// #2
        if(!space){
          return callback("Space not found");
        }
 
-       space.update(updatedSpace, {
-         fields: Object.keys(updatedSpace)
-       })
-       .then(() => {
-         callback(null, space);
-       })
-       .catch((err) => {
-         callback(err);
-       });
+// #3
+       const authorized = new Authorizer(req.user, space).update();
+
+       if(authorized) {
+
+// #4
+         space.update(updatedSpace, {
+           fields: Object.keys(updatedSpace)
+         })
+         .then(() => {
+           callback(null, space);
+         })
+         .catch((err) => {
+           callback(err);
+         });
+       } else {
+
+// #5
+         req.flash("notice", "You are not authorized to do that.");
+         callback("Forbidden");
+       }
      });
    }
 
