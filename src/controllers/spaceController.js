@@ -44,6 +44,7 @@ module.exports = {
       spaceQueries.getSpace(req.params.id, (err, space) => {
 
         if(err || space == null){
+          console.log(err);
           res.redirect(404, "/");
         } else {
           res.render("spaces/show", {space});
@@ -63,7 +64,7 @@ module.exports = {
 
      edit(req, res, next){
 
-      topicQueries.getTopic(req.params.id, (err, topic) => {
+      spaceQueries.getSpace(req.params.id, (err, space) => {
         if(err || topic == null){
           res.redirect(404, "/");
         } else {

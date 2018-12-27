@@ -13,6 +13,7 @@
       <% if(currentUser) { %>
       <% if(currentUser.isAdmin()) { %>
       <a href="/spaces/<%= space.id %>/edit" class="btn btn-warning">Edit</a>
+      <a href="/spaces/<%= space.id %>/posts/new" class="btn btn-success">New Post</a>
 
       <form style="display:initial" action="/spaces/<%= space.id %>/destroy" method="post">
         <button type="submit" class="btn btn-danger">Delete</button>
@@ -21,6 +22,18 @@
       <% } %>
 
       <p><%= space.description %></p>
+
+      <hr>
+
+      <h1>Posts</h1>
+
+      <ul class="list-group">
+        <% space.posts.forEach((post) => { %>
+          <li class="list-group-item">
+         <a href="/spaces/<%= space.id %>/posts/<%= post.id %>"> <%= post.title %> </a>
+       </li>
+       <% }) %>
+     </ul>
 
       <!-- fix this!   <form action="#" method="post">
           <div class="form-group">

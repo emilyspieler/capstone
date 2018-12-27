@@ -10,6 +10,12 @@ module.exports = (sequelize, DataTypes) => {
     foreignKey: "spaceId",
     as: "banners",
   });
+
+  Space.hasMany(models.Post, {
+       foreignKey: "spaceId",
+       as: "posts"
+     });
+
   };
   return Space;
 };
