@@ -13,7 +13,7 @@ module.exports = {
 
     } else {
        req.flash("notice", "You are not authorized to do that.");
-       res.redirect(`/spaces/${newPost.spaceId}/posts/${post.id}`);
+       res.redirect("/spaces");
      }
   },
 
@@ -84,11 +84,9 @@ module.exports = {
      });
   },
 
-
   update(req, res, next){
      postQueries.updatePost(req, req.body, (err, post) => {
        if(err || post == null){
-           console.log(err);
          res.redirect(401, `/spaces/${req.params.spacesId}/posts/${req.params.id}/edit`);
        } else {
          res.redirect(`/spaces/${req.params.spaceId}/posts/${req.params.id}`);
