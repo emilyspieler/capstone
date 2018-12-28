@@ -34,7 +34,7 @@ module.exports = {
         console.log(err);
           res.redirect(500, "/posts/new");
         } else {
-          res.redirect(303, `/spaces/${newPost.spaceId}/posts/${post.id}`);
+          res.redirect(303, `/spaces/${newPost.spaceId}`);
         }
       });
         } else {

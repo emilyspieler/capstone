@@ -11,7 +11,6 @@
 
 
       <% if(currentUser) { %>
-      <a href="/spaces/<%= space.id %>/posts/new" class="btn btn-success">New Post</a>
 
       <% if(currentUser.isAdmin()) { %>
         <a href="/spaces/<%= space.id %>/edit" class="btn btn-warning">Edit</a>
@@ -26,12 +25,28 @@
       <hr>
 
       <h1>Posts</h1>
+      <a href="/spaces/<%= space.id %>/posts/new" class="btn btn-success">New Post</a>
 
       <ul class="list-group">
         <% space.posts.forEach((post) => { %>
-          <li class="list-group-item">
-         <a href="/spaces/<%= space.id %>/posts/<%= post.id %>"> <%= post.title %> </a>
-       </li>
+
+
+       <h1>Name: <%= post.title %></h1>
+       <p>Location Address: <%= post.description %></p>
+       <p>Additional Details: <%= post.body %></p>
+
+
+       <% if(currentUser) { %>
+
+     <!---do you want to add?  <a href="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/edit" class="btn btn-warning">Edit</a> -->
+
+       <% if(currentUser.isAdmin()) { %>
+         <form style="display:initial" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/destroy" method="post">
+           <button type="submit" class="btn btn-danger">Delete</button>
+         </form>
+       <% } %>
+       <% } %>
+
        <% }) %>
      </ul>
 
