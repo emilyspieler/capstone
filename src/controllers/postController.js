@@ -57,9 +57,10 @@ module.exports = {
    destroy(req, res, next){
      postQueries.deletePost(req.params.id, (err, deletedRecordsCount) => {
        if(err){
+         console.log(err);
          res.redirect(err, `/spaces/${req.params.spaceId}/posts/${req.params.id}`)
        } else {
-          res.redirect(303, "/posts")
+          res.redirect("/spaces")
        }
      });
    },
