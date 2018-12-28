@@ -74,7 +74,7 @@ module.exports = {
     const authorized = new Authorizer(req.user, post).edit();
 
     if(authorized){
-           res.render("posts/edit", {space});
+           res.render("posts/edit", {post});
          } else {
            req.flash("You are not authorized to do that.")
            res.redirect(`/spaces/${req.params.spacesId}/posts/${req.params.id}`)
