@@ -65,7 +65,8 @@ module.exports = {
      edit(req, res, next){
 
       spaceQueries.getSpace(req.params.id, (err, space) => {
-        if(err || topic == null){
+        if(err || space == null){
+          console.log(err);
           res.redirect(404, "/");
         } else {
 
@@ -81,16 +82,16 @@ module.exports = {
       });
     },
 
-     update(req, res, next){
+    update(req, res, next){
 
-      spaceQueries.updateSpace(req.params.id, req.body, (err, space) => {
+  spaceQueries.updateSpace(req, req.body, (err, space) => {
 
-        if(err || space == null){
-          res.redirect(404, `/spaces/${req.params.id}/edit`);
-        } else {
-          res.redirect(`/spaces/${space.id}`);
-        }
-      });
-    }
+    if(err || space == null){
+      res.redirect(401, `/spaces/${req.params.id}/edit`);
+       } else {
+         res.redirect(`/spaces/${req.params.id}`);
+       }
+     });
+   }
 
 }

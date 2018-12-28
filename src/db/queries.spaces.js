@@ -60,17 +60,14 @@ module.exports = {
      return Space.findById(req.params.id)
      .then((space) => {
 
-// #2
        if(!space){
          return callback("Space not found");
        }
 
-// #3
        const authorized = new Authorizer(req.user, space).update();
 
        if(authorized) {
 
-// #4
          space.update(updatedSpace, {
            fields: Object.keys(updatedSpace)
          })
@@ -82,7 +79,6 @@ module.exports = {
          });
        } else {
 
-// #5
          req.flash("notice", "You are not authorized to do that.");
          callback("Forbidden");
        }
