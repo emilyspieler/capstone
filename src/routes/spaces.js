@@ -6,6 +6,7 @@ const spaceController = require("../controllers/spaceController");
 
 router.get("/spaces", spaceController.index);
 router.get("/spaces/new", spaceController.new);
+router.get("/spaces/new_navbar", spaceController.new_navbar);
 router.post("/spaces/create", validation.validateSpaces, spaceController.create);
 router.get("/spaces/:id", spaceController.show);
 router.post("/spaces/:id/destroy", spaceController.destroy);

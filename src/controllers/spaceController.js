@@ -25,6 +25,16 @@ module.exports = {
              }
            },
 
+    new_navbar(req, res, next){
+         spaceQueries.getAllSpaces((err, spaces) => {
+             if(err){
+                 res.redirect(500, "static/index");
+               } else {
+                 res.render("spaces/new_navbar", {spaces});
+               }
+             })
+         },
+
   create(req, res, next){
      let newSpace = {
        title: req.body.title,

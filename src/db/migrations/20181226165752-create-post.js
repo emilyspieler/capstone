@@ -20,6 +20,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      zipcode: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
       private: {
         type: Sequelize.BOOLEAN
       },

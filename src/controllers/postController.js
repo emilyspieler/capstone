@@ -4,7 +4,7 @@ const Space = require('../db/models').Space;
 
 module.exports = {
 
-  new(req, res, next){
+new(req, res, next){
 
   const authorized = new Authorizer(req.user).new();
 
@@ -26,6 +26,7 @@ module.exports = {
         title: req.body.title,
         body: req.body.body,
         description: req.body.description,
+        zipcode: req.body.zipcode,
         spaceId: req.params.spaceId,
         userId: req.user.id
       };

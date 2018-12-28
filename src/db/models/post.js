@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    zipcode: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     spaceId: {
       type: DataTypes.INTEGER,
       allowNull: false

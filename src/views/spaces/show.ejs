@@ -25,7 +25,8 @@
       <hr>
 
       <h1>Posts</h1>
-      <a href="/spaces/<%= space.id %>/posts/new" class="btn btn-success">New Post</a>
+      <p>Submit a location...</p>
+      <a href="/spaces/<%= space.id %>/posts/new" class="btn btn-success">New Location</a>
 
       <ul class="list-group">
         <% space.posts.forEach((post) => { %>
@@ -33,6 +34,7 @@
 
        <h1>Name: <%= post.title %></h1>
        <p>Location Address: <%= post.description %></p>
+       <p>Location Zipcode: <%= post.zipcode %></p>
        <p>Additional Details: <%= post.body %></p>
 
 
