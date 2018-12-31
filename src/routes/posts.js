@@ -4,6 +4,7 @@ const Post = require("../db/models").Post;
 const models = require( '../db/models/index');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const postQueries = require("../db/queries.posts.js");
 
 const postController = require("../controllers/postController");
 
@@ -16,13 +17,11 @@ router.post("/spaces/:spaceId/posts/:id/update", postController.update);
 
 
 router.get('/search', (req, res) => {
-  let { term } = req.query;
+  let { posts } = req.query;
 
-  // Make lowercase
-  term = term.toLowerCase();
+  models.Post.findAll({ where: { zipcode: posts } })
 
-  models.Post.findAll({ posts })
-    .then(posts => res.render('posts', { posts }))
+    .then(posts => res.render('posts/show', { posts }))
     .catch(err => console.log(err));
 });
 
