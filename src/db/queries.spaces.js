@@ -6,7 +6,6 @@ module.exports = {
 
   getAllSpaces(callback){
     return Space.all()
-
     .then((spaces) => {
       callback(null, spaces);
     })

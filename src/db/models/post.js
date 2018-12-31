@@ -17,10 +17,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    spaceId: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     userId: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -38,10 +34,7 @@ module.exports = (sequelize, DataTypes) => {
        onDelete: "CASCADE"
       });
 
-    Post.belongsTo(models.Space, {
-      foreignKey: "spaceId",
-      onDelete: "CASCADE"
-    });
+
   };
   return Post;
 };

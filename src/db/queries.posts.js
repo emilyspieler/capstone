@@ -1,5 +1,6 @@
 const Post = require("./models").Post;
 const Space = require("./models").Space;
+const Zipcode = require("./models").Zipcode;
 const Authorizer = require("../policies/spaces");
 
 module.exports = {
@@ -13,6 +14,16 @@ module.exports = {
        callback(err);
      })
    },
+
+   addZipcode(newZipcode, callback){
+      return Zipcode.create(newZipcode)
+      .then((zipcode) => {
+        callback(null, zipcode);
+      })
+      .catch((err) => {
+        callback(err);
+      })
+    },
 
    getPost(id, callback){
        return Post.findById(id)

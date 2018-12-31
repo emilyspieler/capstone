@@ -7,14 +7,14 @@ module.exports = (sequelize, DataTypes) => {
   Space.associate = function(models) {
     // associations can be defined here
     Space.hasMany(models.Banner, {
-    foreignKey: "spaceId",
-    as: "banners",
-  });
+   foreignKey: "spaceId",
+   as: "banners",
+ });
 
-  Space.hasMany(models.Post, {
-       foreignKey: "spaceId",
-       as: "posts"
-     });
+ Space.hasMany(models.Post, {
+      foreignKey: "spaceId",
+      as: "posts"
+    });
 
   };
   return Space;
