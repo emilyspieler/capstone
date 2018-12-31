@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Zipcode.associate = function(models) {
     // associations can be defined here
+
   };
   return Zipcode;
 };

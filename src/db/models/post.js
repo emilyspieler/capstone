@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     zipcode: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       allowNull: false
     },
     userId: {
@@ -33,7 +33,6 @@ module.exports = (sequelize, DataTypes) => {
        foreignKey: "userId",
        onDelete: "CASCADE"
       });
-
 
   };
   return Post;

@@ -2,6 +2,8 @@ const Post = require("./models").Post;
 const Space = require("./models").Space;
 const Zipcode = require("./models").Zipcode;
 const Authorizer = require("../policies/spaces");
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
 
 module.exports = {
 

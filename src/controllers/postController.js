@@ -17,30 +17,6 @@ new(req, res, next){
      }
   },
 
-  new_zipcode(req, res, next){
-       postQueries.getAllPosts((err, posts) => {
-           if(err){
-               res.redirect(500, "spaces/index");
-             } else {
-               res.render("posts/new_zipcode", {spaceId: req.params.spaceId});
-             }
-           })
-       },
-
-    create_zipcode(req, res, next){
-      let newZipcode = {
-       body: req.body.body
-     };
-     postQueries.addZipcode(newZipcode, (err, zipcode) => {
-       if(err){
-         console.log(err)
-         res.redirect(500, "/posts/new");
-       } else {
-         res.redirect(303, `/spaces/`);
-       }
-     });
-    },
-
    create(req, res, next){
 
      const authorized = new Authorizer(req.user).create();
@@ -69,7 +45,7 @@ new(req, res, next){
     },
 
    show(req, res, next){
-     postQueries.getPost(req.params.id, (err, post) => {
+     postQueries.getPostsByZipcode(req.body.zipcode, (err, posts) => {
        if(err || post == null){
          res.redirect(404, "/");
        } else {

@@ -1,7 +1,8 @@
-<form action="/spaces/create_zipcode" method="post">
-  <div class="form-group">
-  <label for="title">Search By Zipcode</label>
-   <input type="integer" class="form-control" name="body" aria-describedby="titleHelp" placeholder="Enter Zipcode">
-    </div>
-    <button type="submit" class="btn btn-primary">Search</button>
-  </form>
+<section id="search" class="search-wrap">
+    <h1>Find A Space</h1>
+    <form action="/search" class="search-form">
+      <i class="fas fa-search"></i>
+      <input type="search" name="term" placeholder="Public Bench, Public Bathroom, etc...">
+      <input type="submit" value="search">
+    </form>
+  </section>

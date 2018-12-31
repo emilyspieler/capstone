@@ -22,7 +22,7 @@ module.exports = {
       },
       zipcode: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.BIGINT
       },
       private: {
         type: Sequelize.BOOLEAN
