@@ -46,15 +46,15 @@ new(req, res, next){
     },
 
    show(req, res, next){
-     postQueries.getPostsByZipcode(req.body.zipcode, (err, posts) => {
+     postQueries.getPost(req.params.id, (err, post) => {
        if(err || post == null){
+         console.log(err);
          res.redirect(404, "/");
        } else {
          res.render("posts/show", {post});
        }
      });
    },
-
 
    destroy(req, res, next){
      postQueries.deletePost(req.params.id, (err, deletedRecordsCount) => {

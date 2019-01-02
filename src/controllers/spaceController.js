@@ -93,7 +93,7 @@ module.exports = {
       });
     },
 
-    update(req, res, next){
+update(req, res, next){
 
   spaceQueries.updateSpace(req, req.body, (err, space) => {
 

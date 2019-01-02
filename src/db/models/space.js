@@ -16,6 +16,11 @@ module.exports = (sequelize, DataTypes) => {
       as: "posts"
     });
 
+  Space.hasMany(models.Comment, {
+    foreignKey: "spaceId",
+    as: "comments"
+  });
+
   };
   return Space;
 };

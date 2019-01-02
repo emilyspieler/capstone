@@ -4,6 +4,8 @@ const Zipcode = require("./models").Zipcode;
 const Authorizer = require("../policies/spaces");
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op;
+const Comment = require("./models").Comment;
+const User = require("./models").User;
 
 module.exports = {
 
@@ -27,15 +29,21 @@ module.exports = {
       })
     },
 
-   getPost(id, callback){
-       return Post.findById(id)
-       .then((post) => {
-         callback(null, post);
-       })
-       .catch((err) => {
-         callback(err);
-       })
-     },
+    getPost(id, callback){
+      return Post.findById(id, {
+        include: [
+          {model: Comment, as: "comments", include: [
+            {model: User }
+          ]}
+        ]
+      })
+      .then((post) => {
+        callback(null, post);
+      })
+      .catch((err) => {
+        callback(err);
+      })
+    },
 
      deletePost(id, callback){
      return Post.destroy({

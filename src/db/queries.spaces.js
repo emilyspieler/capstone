@@ -1,5 +1,7 @@
 const Space = require("./models").Space;
 const Post = require("./models").Post;
+const Comment = require("./models").Comment;
+const User = require("./models").User;
 const Authorizer = require("../policies/spaces");
 
 module.exports = {
@@ -29,10 +31,15 @@ module.exports = {
 
     getSpace(id, callback){
       return Space.findById(id, {
-      include: [{
+      include: [
+        {
         model: Post,
         as: "posts"
-      }]
+      },
+      {model: Comment, as: "comments", include: [
+        {model: User }
+      ]}
+    ]
     })
       .then((space) => {
         callback(null, space);
