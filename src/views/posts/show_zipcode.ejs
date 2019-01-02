@@ -8,6 +8,7 @@
 
     <main class="container">
 
+<% posts.forEach((post) => { %>
 
       <h1>Name: <%= post.title %></h1>
       <p>Location Address: <%= post.description %></p>
@@ -23,7 +24,7 @@
         </form>
 
       <% } %>
-
+       <% }) %>
 
     </main>
 

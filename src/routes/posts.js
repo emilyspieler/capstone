@@ -21,7 +21,7 @@ router.get('/search', (req, res) => {
 
   models.Post.findAll({ where: { zipcode: posts } })
 
-    .then(posts => res.render('posts/show', { posts }))
+    .then(posts => res.render('posts/show_zipcode', { posts }))
     .catch(err => console.log(err));
 });
 
