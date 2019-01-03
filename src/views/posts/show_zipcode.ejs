@@ -3,14 +3,14 @@
   <head>
     <% include ../static/partials/head.ejs %>
   </head>
-  <body>
+  <body id="search">
     <% include ../static/partials/navbar.ejs %>
 
-    <main class="container">
+    <main id="search" class="container">
 
 <% posts.forEach((post) => { %>
 
-      <h1>Name: <%= post.title %></h1>
+      <h1 id="search">Name: <%= post.title %></h1>
       <p>Location Address: <%= post.description %></p>
       <p>Location Zipcode: <%= post.zipcode %></p>
       <p>Additional Details: <%= post.body %></p>

@@ -1,5 +1,6 @@
 body {
   padding-top: 54px;
+  margin-bottom: 10%;
 }
 
 h1 {
@@ -82,31 +83,31 @@ h3 {
 }
 
 a:link {
-color: #bd8c7d;
-font-family: 'Roboto', sans-serif;
-font-weight: 400;
-text-transform: uppercase;
+  color: #bd8c7d;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 a:active {
-color: #bd8c7d;
-font-family: 'Roboto', sans-serif;
-font-weight: 400;
-text-transform: uppercase;
+  color: #bd8c7d;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 a:visited {
-color: #49494b;
-font-family: 'Roboto', sans-serif;
-font-weight: 400;
-text-transform: uppercase;
+  color: #49494b;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 a:hover {
-color: #49494b;
-font-family: 'Roboto', sans-serif;
-font-weight: 400;
-text-transform: uppercase;
+  color: #49494b;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 #main-body {
@@ -187,10 +188,12 @@ main.container {
 
 body {
   background-color: #000105;
+  margin-bottom: 10%;
 }
 
 body#posting {
   background-color: white;
+  margin-bottom: 10%;
 }
 
 p {
@@ -283,6 +286,7 @@ a.btn.btn-success {
 
 li#item.list-group-item {
   background-color: white;
+  margin: auto;
 }
 
 main#signup.container{
@@ -291,6 +295,7 @@ main#signup.container{
 
 body#signup {
   background-color:white;
+  margin-bottom: 10%;
 }
 
 main#signin.container{
@@ -372,6 +377,7 @@ section#comment-form{
 body#comments {
   padding-top: 10px;
   background-color:white;
+  margin-bottom: 10%;
 }
 
 main#new-post.container{
@@ -382,14 +388,26 @@ main#edit-post.container{
   background-color: white;
 }
 
+main#search.container{
+  background-color: white;
+}
+
 body#new-post {
   padding-top: 10px;
   background-color:white;
+  margin-bottom: 10%;
 }
 
 body#edit-post {
   padding-top: 10px;
   background-color:white;
+  margin-bottom: 10%;
+}
+
+body#search {
+  padding-top: 10px;
+  background-color:white;
+  margin-bottom: 10%;
 }
 
 h1#comments{
@@ -427,6 +445,23 @@ h1#new-post{
 }
 
 h1#edit-post{
+  padding-top: 5%;
+  padding-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  /*color: #ef4f4f; */
+  font-size: 50px;
+  color: #2EC4B6;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #2EC4B6
+  color: black;
+ -webkit-text-fill-color: #2EC4B6;; /* Will override color (regardless of order) */
+ -webkit-text-stroke-width: 1px;
+ -webkit-text-stroke-color: black;
+}
+
+h1#search{
   padding-top: 5%;
   padding-bottom: 15px;
   font-family: 'Roboto', sans-serif;
