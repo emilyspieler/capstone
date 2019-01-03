@@ -346,6 +346,21 @@ button#signin.btn.btn-primary {
   color: white;
 }
 
+button#new-post.btn.btn-primary {
+  margin-top: 1%;
+  background-color: #011627;
+  color: white;
+  margin-bottom: 10%;
+}
+
+button#edit-post.btn.btn-primary {
+  margin-top: 1%;
+  background-color: #011627;
+  color: white;
+  margin-bottom: 10%;
+}
+
+
 main#commments.container{
   background-color: white;
 }
@@ -359,7 +374,59 @@ body#comments {
   background-color:white;
 }
 
+main#new-post.container{
+  background-color: white;
+}
+
+main#edit-post.container{
+  background-color: white;
+}
+
+body#new-post {
+  padding-top: 10px;
+  background-color:white;
+}
+
+body#edit-post {
+  padding-top: 10px;
+  background-color:white;
+}
+
 h1#comments{
+  padding-top: 5%;
+  padding-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  /*color: #ef4f4f; */
+  font-size: 50px;
+  color: #2EC4B6;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #2EC4B6
+  color: black;
+ -webkit-text-fill-color: #2EC4B6;; /* Will override color (regardless of order) */
+ -webkit-text-stroke-width: 1px;
+ -webkit-text-stroke-color: black;
+}
+
+h1#new-post{
+  padding-top: 5%;
+  padding-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  /*color: #ef4f4f; */
+  font-size: 50px;
+  color: #2EC4B6;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #2EC4B6
+  color: black;
+ -webkit-text-fill-color: #2EC4B6;; /* Will override color (regardless of order) */
+ -webkit-text-stroke-width: 1px;
+ -webkit-text-stroke-color: black;
+}
+
+h1#edit-post{
   padding-top: 5%;
   padding-bottom: 15px;
   font-family: 'Roboto', sans-serif;

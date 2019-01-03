@@ -3,11 +3,11 @@
   <head>
     <% include ../static/partials/head.ejs %>
   </head>
-  <body>
+  <body id="new-post">
     <% include ../static/partials/navbar.ejs %>
 
-    <main class="container">
-      <h1>New Post</h1>
+    <main id="new-post" class="container">
+      <h1 id="new-post">New Post</h1>
 <!-- #1 -->
       <form action="/spaces/<%= spaceId %>/posts/create" method="post">
         <div class="form-group">
@@ -26,7 +26,7 @@
           <label for="description">Post Zipcode</label>
           <input type="number" min="10000" max="99999" class="form-control" name="zipcode" aria-describedby="titleHelp" placeholder="Enter Title">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="new-post" type="submit" class="btn btn-primary">Submit</button>
       </form>
     </main>
 
