@@ -1,16 +1,48 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-sm navbar-light">
+  <!-- Brand -->
+
+  <a class="navbar-brand" href="/">Public Spaces</a>
+
+  <section id="search" class="search-wrap">
+      <form action="/search" class="search-form">
+        <i class="fas fa-search"></i>
+        <input type="search" name="posts" placeholder="Search By Zipcode">
+        <input id="nav" type="submit" value="search">
+      </form>
+    </section>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/spaces/new_navbar">Submit A Space</a>
+    </li>
+
+      <% if(currentUser) { %>
+
+    <li class="nav-item">
+      <a class="nav-link" href="/users/sign_out">Sign Out</a>
+    </li>
+
+    <% } else { %>
+
+    <li class="nav-item">
+      <a class="nav-link" href="/users/sign_up">Sign up</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/users/sign_in">Sign in</a>
+    </li>
+    <% }%>
+  </ul>
+</nav>
+
+
+
+<!-- <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container" id="bar">
     <a class="navbar-brand" href="/">Public Spaces</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <section id="search" class="search-wrap">
-        <form action="/search" class="search-form">
-          <i class="fas fa-search"></i>
-          <input type="search" name="posts" placeholder="Search By Zipcode">
-          <input id="nav" type="submit" value="search">
-        </form>
-      </section>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -26,7 +58,7 @@
        <a class="nav-link" href="/users/sign_out">Sign out</a>
      </li>
    <% } else { %>
-   <!-- #2 -->
+
      <li class="nav-item">
        <a class="nav-link" href="/users/sign_up">Sign up</a>
      </li>
@@ -38,3 +70,11 @@
     </div>
   </div>
 </nav>
+
+<section id="search" class="search-wrap">
+    <form action="/search" class="search-form">
+      <i class="fas fa-search"></i>
+      <input type="search" name="posts" placeholder="Search By Zipcode">
+      <input id="nav" type="submit" value="search">
+    </form>
+  </section> -->
