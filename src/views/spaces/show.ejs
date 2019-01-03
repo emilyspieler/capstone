@@ -3,13 +3,13 @@
   <head>
     <% include ../static/partials/head.ejs %>
   </head>
-  <body>
+  <body id="posting">
     <% include ../static/partials/navbar.ejs %>
 
-    <main class="container">
+    <main id="post_page" class="container">
+      <div class="post_page_one">
 
-      <h2>Public Space : <%= space.title %></h2>
-
+      <h5>Public Space : <%= space.title %></h4>
 
       <% if(currentUser) { %>
 
@@ -21,29 +21,36 @@
       <% } %>
       <% } %>
 
+
+
       <p><%= space.description %></p>
 
+</div>
       <hr>
 
+<div class="post_page_two">
 
-      <h1>Posts</h1>
-
-
-      <p>Submit a location...</p>
+      <h6>Submit a location...</h6>
       <a href="/spaces/<%= space.id %>/posts/new" class="btn btn-success">New Location</a>
+
+    </div>
 
       <ul class="list-group">
 
 
         <% space.posts.forEach((post) => { %>
 
+          <div id="posts">
 
-       <h1>Name: <%= post.title %></h1>
+       <h4>Name: <%= post.title %></h4>
        <p>Location Address: <%= post.description %></p>
        <p>Location Zipcode: <%= post.zipcode %></p>
        <p>Additional Details: <%= post.body %></p>
 
-       <li class="list-group-item">
+</div>
+
+
+       <li id="item" class="list-group-item">
          <a href="/spaces/<%= space.id %>/posts/<%= post.id %>"> comments about <%= post.title %> </a>
        </li>
 

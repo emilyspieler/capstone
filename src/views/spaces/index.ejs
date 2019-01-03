@@ -4,20 +4,35 @@
     <% include ../static/partials/head.ejs %>
   </head>
   <body>
-    <main class="container">
       <% include ../static/partials/navbar.ejs %>
-
+<div id="main-body">
+  <div class="row">
+    <div class="col">
       <header class="jumbotron my-4">
-        <h1 class="display-3">Welcome to Public Spaces App</h1>
-        <p class="lead">An application for users look up public spaces.</p>
+        <h2>Looking for something?</h2>
+        <h1>Get searching! Enter your zipcode or pick a cateogry. </h1>
+
+        <section id="search-two" class="search-wrap">
+            <form action="/search" class="search-form">
+              <i class="fas fa-search"></i>
+              <input type="search" name="posts" placeholder="Search By Zipcode">
+              <input type="submit" value="search">
+            </form>
+          </section>
+
       </header>
 
-      <h1>I'm looking for...</h1>
+    </div>
+      <div class="col">
+        <div id="header-two">
 
+      <h3>I'm looking for...</h3>
+      </div>
 
-      <ul class="list-group">
+      <ul id="space_group" class="list-group list-group-flush">
 
         <% spaces.forEach((space) => { %>
+
 
           <li class="list-group-item">
             <a href="/spaces/<%= space.id %>"> <%= space.title %> </a>
@@ -31,6 +46,7 @@
      <a href="/spaces/new" class="btn btn-success">New Space</a>
        <% } %>
        <% } %>
+
 
     </main>
   </body>
