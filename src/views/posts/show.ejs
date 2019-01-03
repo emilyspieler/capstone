@@ -3,17 +3,19 @@
   <head>
     <% include ../static/partials/head.ejs %>
   </head>
-  <body>
+  <body  id="comments" >
     <% include ../static/partials/navbar.ejs %>
 
-    <main class="container">
+    <main id="commments" class="container">
 
-
-      <h1>Name: <%= post.title %></h1>
+<div id="comments-post">
+      <h1 id="comments">Name: <%= post.title %></h1>
       <p>Location Address: <%= post.description %></p>
       <p>Location Zipcode: <%= post.zipcode %></p>
       <p>Additional Details: <%= post.body %></p>
+    </div>
 
+<hr id="comments">
 
       <section id="comment-form">
 
@@ -35,14 +37,14 @@
          </section>
 
 
-      <% if(currentUser) { %>
+  <!--    <% if(currentUser) { %>
 
 
         <form style="display:initial" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/destroy" method="post">
           <button type="submit" class="btn btn-danger">Delete</button>
         </form>
 
-      <% } %>
+      <% } %> -->
 
 
     </main>
