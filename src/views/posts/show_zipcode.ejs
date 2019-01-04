@@ -9,8 +9,6 @@
 
 <main id="search" class="container">
 
-<% posts.forEach((space) => { %>
-  <h1 id="search">Name: <%= posts.spaces.title %></h1>
 
     <% posts.forEach((post) => { %>
       <h1 id="search">Name: <%= post.title %></h1>
@@ -23,7 +21,6 @@
           <button type="submit" class="btn btn-danger">Delete</button>
         </form>
       <% } %>
-       <% }) %>
        <% }) %>
 
     </main>
