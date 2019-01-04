@@ -27,7 +27,7 @@ module.exports = {
                res.redirect("/spaces");
              }
            },
-           
+
 
     new_navbar(req, res, next){
       spaceQueries.getAllSpaces((err, spaces) => {
@@ -46,6 +46,7 @@ module.exports = {
      };
      spaceQueries.addSpace(newSpace, (err, space) => {
        if(err){
+         console.log(err);
          res.redirect(500, "/spaces/new");
        } else {
          res.redirect(303, `/spaces/${space.id}`);

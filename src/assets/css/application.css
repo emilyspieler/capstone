@@ -391,6 +391,14 @@ main#search.container{
   background-color: white;
 }
 
+main#new.container{
+  background-color: white;
+}
+
+main#edit.container{
+  background-color: white;
+}
+
 body#new-post {
   background-color:white;
   margin-bottom: 10%;
@@ -402,6 +410,16 @@ body#edit-post {
 }
 
 body#search {
+  background-color:white;
+  margin-bottom: 10%;
+}
+
+body#edit {
+  background-color:white;
+  margin-bottom: 10%;
+}
+
+body#new {
   background-color:white;
   margin-bottom: 10%;
 }
