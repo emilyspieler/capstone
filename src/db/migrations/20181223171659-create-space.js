@@ -21,6 +21,9 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+       postId: {
+         type: Sequelize.INTEGER,
        }
     });
   },

@@ -29,6 +29,11 @@ module.exports = (sequelize, DataTypes) => {
        onDelete: "CASCADE"
      });
 
+     Post.hasOne(models.Space, {
+        foreignKey: "postId",
+        as: "spaces"
+      });
+
      Post.belongsTo(models.User, {
        foreignKey: "userId",
        onDelete: "CASCADE"

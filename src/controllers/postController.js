@@ -6,6 +6,7 @@ const models = require( '../db/models/index');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const spaceQueries = require("../db/queries.spaces.js");
+const passport = require("passport");
 
 module.exports = {
 
@@ -17,11 +18,12 @@ new(req, res, next){
        res.render("posts/new", {spaceId: req.params.spaceId});
 
     } else {
-       req.flash("notice", "You are not authorized to do that.");
-       res.redirect("/spaces");
+       if(!req.user){
+         alert("notice", "You must be signed in do to do that.")
+         res.redirect("/");
      }
-  },
-
+   }
+},
 
    create(req, res, next){
 
@@ -63,22 +65,20 @@ new(req, res, next){
      });
    },
 
-   show_search(req, res, next){
-     postQueries.getPost(req.params.id, (err, posts) => {
-       if(err){
-         res.redirect(404, "/");
-         console.log(err)
-       } else {
-
-     let { posts } = req.query;
-
-     models.Post.findAll({ where: { zipcode: posts } })
-
-       .then(posts => res.render('posts/show_zipcode', {posts}))
-       .catch(err => console.log(err));
-       }
-   });
- },
+   show_search(req, res, next) {
+    let { posts } = req.query;
+    models.Post.findAll({
+       where: { zipcode: posts } ,
+      include: [
+        {
+          model: Post,
+          as: "posts"
+        }
+      ]
+    })
+     .then(posts => res.render('posts/show_zipcode', {posts})
+     .catch(err => console.log(err)));
+     },
 
    destroy(req, res, next){
      postQueries.deletePost(req.params.id, (err, deletedRecordsCount) => {

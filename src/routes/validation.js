@@ -19,6 +19,21 @@ module.exports = {
     }
   },
 
+  validatePosts(req, res, next) {
+     if(req.method === "POST") {
+       req.checkUser("users", "must not be empty"). notEmpty();
+     }
+
+     const errors = req.validationErrors();
+
+     if (errors) {
+       req.flash("error", errors);
+       return res.redirect(req.headers.referer);
+     } else {
+       return next();
+     }
+   },
+
   validateUsers(req, res, next) {
      if(req.method === "POST") {
 

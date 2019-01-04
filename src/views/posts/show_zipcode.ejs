@@ -9,14 +9,10 @@
 <main id="search" class="container">
 
     <% posts.forEach((post) => { %>
-
-
       <h1 id="search">Name: <%= post.title %></h1>
       <p>Location Address: <%= post.description %></p>
       <p>Location Zipcode: <%= post.zipcode %></p>
       <p>Additional Details: <%= post.body %></p>
-      
-
 
       <% if(currentUser) { %>
         <form style="display:initial" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/destroy" method="post">
@@ -24,8 +20,6 @@
         </form>
       <% } %>
        <% }) %>
-
-
 
     </main>
 

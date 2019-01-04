@@ -2,7 +2,11 @@
 module.exports = (sequelize, DataTypes) => {
   const Space = sequelize.define('Space', {
     title: DataTypes.STRING,
-    description: DataTypes.STRING
+    description: DataTypes.STRING,
+    postId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      }
   }, {});
   Space.associate = function(models) {
     // associations can be defined here
