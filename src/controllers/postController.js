@@ -10,20 +10,18 @@ const passport = require("passport");
 
 module.exports = {
 
-new(req, res, next){
+  new(req, res, next){
 
-  const authorized = new Authorizer(req.user).new();
+    const authorized = new Authorizer(req.user).new();
 
-     if(authorized) {
-       res.render("posts/new", {spaceId: req.params.spaceId});
+       if(authorized) {
+         res.render("posts/new", {spaceId: req.params.spaceId});
 
-    } else {
-       if(!req.user){
-         alert("notice", "You must be signed in do to do that.")
+      } else {
+         req.flash("notice", "You must be signed in to create posts.");
          res.redirect("/");
-     }
-   }
-},
+       }
+     },
 
    create(req, res, next){
 
