@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
    };
 
    Post.afterCreate((post, callback) => {
-     return models.Favorite.create({
+     return models.Flag.create({
        userId: post.userId,
        postId: post.id
      });
