@@ -29,7 +29,12 @@ User.hasMany(models.Comment, {
     foreignKey: "userId",
     as: "comments"
   });
-  
+
+  User.hasMany(models.Flag, {
+     foreignKey: "userId",
+     as: "flags"
+   });
+
   };
   User.prototype.isAdmin = function() {
      return this.role === "admin";

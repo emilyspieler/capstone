@@ -1,0 +1,11 @@
+<% const flag = post.getFlagFor(currentUser.id) %>
+<% if (flag) { %>
+  <form style="display: initial;" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/flags/<%= flag.id %>/destroy" method="post">
+    <button id="flag-one" type="submit" class="btn btn-danger">I no longer have an issue with this space</button>
+  </form>
+<% } else { %>
+ <!-- #2 -->
+  <form style="display: initial;" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/flags/create" method="post">
+    <button id="flag-two" type="submit" class="btn btn-primary">I've had an issue with this space</button>
+  </form>
+<% } %>

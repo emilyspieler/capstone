@@ -16,6 +16,10 @@
       <p>Additional Details: <%= post.body %></p>
     </div>
 
+    <% if(currentUser) { %>
+     <% include ../flags/flag.ejs %>
+   <% } %>
+
 <hr id="comments">
 
       <section id="comment-form">

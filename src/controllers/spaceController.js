@@ -1,6 +1,8 @@
 const spaceQueries = require("../db/queries.spaces.js");
 const Space = require('../db/models').Space;
 const Authorizer = require("../policies/spaces");
+const postQueries = require("../db/queries.posts.js");
+const Post = require('../db/models').Post;
 
 module.exports = {
   index(req, res, next){
@@ -25,16 +27,17 @@ module.exports = {
                res.redirect("/spaces");
              }
            },
+           
 
     new_navbar(req, res, next){
-         spaceQueries.getAllSpaces((err, spaces) => {
-             if(err){
-                 res.redirect(500, "static/index");
-               } else {
-                 res.render("spaces/new_navbar", {spaces});
-               }
-             })
-         },
+      spaceQueries.getAllSpaces((err, spaces) => {
+               if(err){
+                   res.redirect(500, "static/index");
+                 } else {
+                   res.render("spaces/new_navbar", {spaces});
+                 }
+               })
+           },
 
   create(req, res, next){
      let newSpace = {

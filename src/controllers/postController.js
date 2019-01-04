@@ -26,7 +26,6 @@ module.exports = {
    create(req, res, next){
 
      const authorized = new Authorizer(req.user).create();
-     console.log(req);
 
      if(authorized) {
       let newPost= {
@@ -69,8 +68,8 @@ module.exports = {
        where: { zipcode: posts } ,
       include: [
         {
-          model: Post,
-          as: "posts"
+          model: Space,
+          as: "spaces"
         }
       ]
     })

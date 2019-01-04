@@ -44,6 +44,22 @@ module.exports = (sequelize, DataTypes) => {
       as: "comments"
     });
 
+    Post.hasMany(models.Flag, {
+     foreignKey: "postId",
+     as: "flags"
+   });
+
+   Post.prototype.getFlagFor = function(userId){
+     return this.flags.find((flag) => { return flag.userId == userId });
+   };
+
+   Post.afterCreate((post, callback) => {
+     return models.Favorite.create({
+       userId: post.userId,
+       postId: post.id
+     });
+   });
+
   };
   return Post;
 };

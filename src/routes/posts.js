@@ -13,6 +13,7 @@ const helper = require("../auth/helpers");
 const postController = require("../controllers/postController");
 
 router.get("/spaces/:spaceId/posts/new", postController.new);
+router.get("/spaces/:spaceId/posts/new_navbar", postController.new);
 router.post("/spaces/:spaceId/posts/create", helper.ensureAuthenticated,
    validation.validatePosts, postController.create);
 router.get("/spaces/:spaceId/posts/:id", postController.show);

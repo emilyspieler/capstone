@@ -285,7 +285,7 @@ a.btn.btn-success {
 
 li#item.list-group-item {
   background-color: white;
-  margin: auto;
+
 }
 
 main#signup.container{
@@ -375,7 +375,6 @@ section#comment-form{
 }
 
 body#comments {
-  padding-top: 10px;
   background-color:white;
   margin-bottom: 10%;
 }
@@ -490,11 +489,40 @@ button#comments.btn.btn-primary {
   color: white;
 }
 
+button#flag-two.btn.btn-primary {
+  margin-top: 1%;
+  margin-bottom: 3%;
+  background-color: #011627;
+  color: white;
+}
+
+button#flag-one.btn.btn-primary {
+  margin-top: 1%;
+  margin-bottom: 3%;
+  background-color:  #2EC4B6;
+  color: white;
+}
+
+
 button.btn.btn-sm.btn-outline-danger {
   background-color: #011627;
   color: white;
   margin-left: 5%;
 }
+
+a.btn.btn-warning {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: #011627;
+  color: white;
+}
+button.btn.btn-danger {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: #011627;
+  color: white;
+}
+
 
 input#nav{
   margin-top: 1%;

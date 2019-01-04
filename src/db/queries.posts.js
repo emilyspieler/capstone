@@ -6,6 +6,7 @@ const Sequelize = require('sequelize')
 const Op = Sequelize.Op;
 const Comment = require("./models").Comment;
 const User = require("./models").User;
+const Flag = require("./models").Flag;
 
 module.exports = {
 
@@ -37,8 +38,9 @@ module.exports = {
           as: "spaces"
         },
           {model: Comment, as: "comments", include: [
-            {model: User }
-          ]}
+            {model: User },
+          ]},
+          {model: Flag, as: "flags"}
         ]
       })
       .then((post) => {
