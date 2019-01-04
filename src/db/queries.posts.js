@@ -32,6 +32,10 @@ module.exports = {
     getPost(id, callback){
       return Post.findById(id, {
         include: [
+          {
+          model: Space,
+          as: "spaces"
+        },
           {model: Comment, as: "comments", include: [
             {model: User }
           ]}

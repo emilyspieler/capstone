@@ -6,25 +6,26 @@
   <body id="search">
     <% include ../static/partials/navbar.ejs %>
 
-    <main id="search" class="container">
+<main id="search" class="container">
 
-<% posts.forEach((post) => { %>
+    <% posts.forEach((post) => { %>
+
 
       <h1 id="search">Name: <%= post.title %></h1>
       <p>Location Address: <%= post.description %></p>
       <p>Location Zipcode: <%= post.zipcode %></p>
       <p>Additional Details: <%= post.body %></p>
+      
 
 
       <% if(currentUser) { %>
-
-
         <form style="display:initial" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/destroy" method="post">
           <button type="submit" class="btn btn-danger">Delete</button>
         </form>
-
       <% } %>
        <% }) %>
+
+
 
     </main>
 

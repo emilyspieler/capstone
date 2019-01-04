@@ -1,6 +1,11 @@
 const postQueries = require("../db/queries.posts.js");
 const Authorizer = require("../policies/post");
 const Space = require('../db/models').Space;
+const Post = require("../db/models").Post;
+const models = require( '../db/models/index');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+const spaceQueries = require("../db/queries.spaces.js");
 
 module.exports = {
 
@@ -21,9 +26,11 @@ new(req, res, next){
    create(req, res, next){
 
      const authorized = new Authorizer(req.user).create();
+     console.log(req);
 
      if(authorized) {
       let newPost= {
+
         title: req.body.title,
         body: req.body.body,
         description: req.body.description,
@@ -55,6 +62,23 @@ new(req, res, next){
        }
      });
    },
+
+   show_search(req, res, next){
+     postQueries.getPost(req.params.id, (err, posts) => {
+       if(err){
+         res.redirect(404, "/");
+         console.log(err)
+       } else {
+
+     let { posts } = req.query;
+
+     models.Post.findAll({ where: { zipcode: posts } })
+
+       .then(posts => res.render('posts/show_zipcode', {posts}))
+       .catch(err => console.log(err));
+       }
+   });
+ },
 
    destroy(req, res, next){
      postQueries.deletePost(req.params.id, (err, deletedRecordsCount) => {
