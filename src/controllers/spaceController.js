@@ -8,10 +8,9 @@ module.exports = {
   index(req, res, next){
     spaceQueries.getAllSpaces((err, spaces) => {
         if(err){
-          console.log()
           res.redirect(500, "static/index");
         } else {
-          res.render("spaces/index", {spaces});
+          res.render("spaces/index", {...result});
         }
       })
   },

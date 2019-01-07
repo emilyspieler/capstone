@@ -7,7 +7,16 @@ const Authorizer = require("../policies/spaces");
 module.exports = {
 
   getAllSpaces(callback){
-    return Space.all()
+    return Space.all(
+      {
+        include: [
+          {
+            model: Post,
+            as: "posts"
+          }
+        ]
+      }
+    )
     .then((spaces) => {
       callback(null, spaces);
     })

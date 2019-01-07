@@ -476,7 +476,6 @@ h1#edit-post{
 }
 
 h1#search{
-  padding-top: 5%;
   padding-bottom: 15px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -546,4 +545,20 @@ input#nav{
   margin-top: 1%;
   background-color: #011627;
   color: white;
+}
+
+h4#search {
+  margin-top: 4%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  /*color: #ef4f4f; */
+  font-size: 50px;
+  color: #fff42d;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #fff42d;
+  color: black;
+ -webkit-text-fill-color: #fff42d; /* Will override color (regardless of order) */
+ -webkit-text-stroke-width: 1px;
+ -webkit-text-stroke-color: black;
 }

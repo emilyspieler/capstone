@@ -63,6 +63,10 @@ module.exports = {
    },
 
    show_search(req, res, next) {
+     spaceQueries.getAllSpaces((err, spaces) => {
+       if(err){
+          res.redirect(500, "/");
+          } else {
     let { posts } = req.query;
     models.Post.findAll({
        where: { zipcode: posts } ,
@@ -73,8 +77,9 @@ module.exports = {
         }
       ]
     })
-     .then(posts => res.render('posts/show_zipcode', {posts})
-     .catch(err => console.log(err)));
+     .then(posts => res.render('posts/show_zipcode', {posts: posts, spaces: spaces}));
+    }
+      })
      },
 
    destroy(req, res, next){

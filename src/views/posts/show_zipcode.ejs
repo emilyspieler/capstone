@@ -9,18 +9,28 @@
 
 <main id="search" class="container">
 
+  <% spaces.forEach((space) => { %>
+      <% space.posts.forEach((post) => { %>
 
-    <% posts.forEach((post) => { %>
+
+      <h4 id="search">Category: <%= space.title %></h4>
       <h1 id="search">Name: <%= post.title %></h1>
       <p>Location Address: <%= post.description %></p>
       <p>Location Zipcode: <%= post.zipcode %></p>
       <p>Additional Details: <%= post.body %></p>
 
+
+    </ul>
+
+
+
+
       <% if(currentUser) { %>
-        <form style="display:initial" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/destroy" method="post">
+    <!--    <form style="display:initial" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/destroy" method="post">
           <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
+        </form> -->
       <% } %>
+        <% }) %>
        <% }) %>
 
     </main>
