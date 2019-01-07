@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body id="search">
+
+<main id="search" class="container">
+
+        <% spaces.forEach((space) => { %>
+
+      <h1 id="search">Name: <%= space.title %></h1>
+
+       <% if(currentUser) { %>
+         <!--    <form style="display:initial" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/destroy" method="post">
+         <button type="submit" class="btn btn-danger">Delete</button>
+       </form> -->
+      <% } %>
+
+
+    <% }) %>
+
+
+    </main>
+
+  </body>
+</html>

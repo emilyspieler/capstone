@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    spaceTitle: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     body: {
       type: DataTypes.STRING,
       allowNull: false
@@ -28,11 +32,6 @@ module.exports = (sequelize, DataTypes) => {
        foreignKey: "spaceId",
        onDelete: "CASCADE"
      });
-
-     Post.belongsTo(models.Space, {
-        foreignKey: "spaceId",
-        onDelete: "CASCADE"
-      });
 
      Post.hasOne(models.Space, {
         foreignKey: "postId",

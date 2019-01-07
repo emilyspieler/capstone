@@ -11,15 +11,15 @@
 
     <main id="edit-post" class="container">
 
-      <h1 id="edit-post">Edit Post</h1>
+      <h1 id="edit-post">Edit Resource</h1>
 
       <form action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/update" method="post">
         <div class="form-group">
-          <label for="title">Post title</label>
+          <label for="title">Resource title</label>
           <input value="<%= post.title %>" type="text" class="form-control" name="title" aria-describedby="titleHelp" placeholder="Enter Title">
         </div>
         <div class="form-group">
-          <label for="body">Post body</label>
+          <label for="body">Resource body</label>
           <textarea rows="4" class="form-control" name="body" placeholder="Enter Description"><%= post.body %></textarea>
         </div>
         <button id="edit-post" type="submit" class="btn btn-primary">Update</button>

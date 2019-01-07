@@ -14,24 +14,6 @@ module.exports = {
       req.flash("notice", "You must be signed in to do that.")
     }
 
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-       const msg = {
-         to: 'emilyspieler1@gmail.com',
-         from: 'no-reply@capsone.com',
-         subject:  'space flagged!',
-         text: 'Please investigate',
-         html: '<strong>Please investigate</strong>',
-       };
-
-          sgMail.send(msg).then( () => {
-            console.log("Successfully Sent Mail!");
-          })
-          .catch( error => {
-            console.error(error.toString());
-          });
-
-
-    req.flash("notice", "Thank you, an email has been sent to our admin.")
     res.redirect(req.headers.referer);
 
   },
@@ -45,6 +27,25 @@ module.exports = {
         }
         res.redirect(req.headers.referer);
       });
+      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+         const msg = {
+           to: 'emilyspieler1@gmail.com',
+           from: 'no-reply@capsone.com',
+           subject:  'space flagged!',
+           text: 'Please investigate',
+           html: '<strong>Please investigate</strong>',
+         };
+
+            sgMail.send(msg).then( () => {
+              console.log("Successfully Sent Mail!");
+            })
+            .catch( error => {
+              console.error(error.toString());
+            });
+
+
+      req.flash("notice", "Thank you, an email has been sent to our admin.")
+      
     } else {
       req.flash("notice", "You must be signed in to do that.")
       res.redirect(req.headers.referer);
