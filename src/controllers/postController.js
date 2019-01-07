@@ -67,9 +67,10 @@ module.exports = {
        if(err){
           res.redirect(500, "/");
           } else {
-    let { posts } = req.query;
-    models.Post.findAll({
-       where: { zipcode: posts } ,
+     let { posts } = req.query;
+     console.log(req.query)
+      models.Post.findAll({
+       where: { zipcode: posts },
       include: [
         {
           model: Space,
@@ -77,7 +78,7 @@ module.exports = {
         }
       ]
     })
-     .then(posts => res.render('posts/show_zipcode', {posts: posts, spaces: spaces}));
+     .then(posts => res.render('posts/show_zipcode', { spaces: spaces, posts: posts}));
     }
       })
      },
