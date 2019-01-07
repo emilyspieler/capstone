@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     postId: {
         type: DataTypes.INTEGER,
-        allowNull: false
       }
   }, {});
   Space.associate = function(models) {
