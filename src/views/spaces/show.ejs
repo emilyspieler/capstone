@@ -32,11 +32,17 @@
 <div class="post_page_two">
 
       <h6>Submit A Resource...</h6>
-      <a href="/spaces/<%= space.id %>/posts/new" class="btn btn-success">New Location</a>
+      <a href="/spaces/<%= space.id %>/posts/new" id="new-resource" class="btn btn-success">New Resource</a>
 
     </div>
 
+    <hr>
+
       <ul class="list-group">
+
+
+
+          <h5>See what other users have entered: %></h5>
 
 
         <% space.posts.forEach((post) => { %>
