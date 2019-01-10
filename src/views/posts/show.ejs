@@ -2,14 +2,19 @@
 <html>
   <head>
     <% include ../static/partials/head.ejs %>
+
   </head>
+
   <body  id="comments" >
     <% include ../static/partials/navbar.ejs %>
     <% include ../static/partials/messages.ejs %>
 
+
+
     <main id="commments" class="container">
 
 <div id="comments-post">
+
       <h1 id="comments">Name: <%= post.title %></h1>
         <p>Location Type: <%= post.spaceTitle %></p>
       <p>Location Address: <%= post.description %></p>
