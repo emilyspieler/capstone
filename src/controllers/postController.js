@@ -69,7 +69,7 @@ module.exports = {
           res.redirect(500, "/");
           } else {
               let { posts } = req.query;
-              console.log(req.query)
+              console.log(posts);
               models.Post.findAll({
                 where: { zipcode: posts },
                 include: [

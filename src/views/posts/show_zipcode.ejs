@@ -11,7 +11,7 @@
 
 
         <% posts.forEach((post) => { %>
-
+<header class="jumbotron my-4">
 
        <h1 id="search"><%= post.title %></h1>
        <h6>Location type: <%= post.spaceTitle %></h6>
@@ -19,6 +19,7 @@
        <p>Location ZIP Code: <%= post.zipcode %></p>
        <p>Additional Details: <%= post.body %></p>
 
+</header>
 
        <% if(currentUser) { %>
          <!--    <form style="display:initial" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/destroy" method="post">
@@ -28,6 +29,7 @@
 
 
     <% }) %>
+
 
     </main>
 

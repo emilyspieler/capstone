@@ -12,7 +12,7 @@
 
 
     <main id="commments" class="container">
-
+<header class="jumbotron my-4">
 <div id="comments-post">
 
       <h1 id="comments">Name: <%= post.title %></h1>
@@ -21,6 +21,7 @@
       <p>Location ZIP Code: <%= post.zipcode %></p>
       <p>Additional Details: <%= post.body %></p>
     </div>
+
 
     <% if(currentUser) { %>
      <% include ../flags/flag.ejs %>
@@ -35,7 +36,7 @@
             <% include ../comments/new.ejs %>
           <% } %>
          </section>
-
+</header>
        <!-- #2 -->
          <section id="comment-list">
           <% if(post.comments) { %>

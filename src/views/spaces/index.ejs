@@ -11,13 +11,14 @@
   <div class="row">
     <div class="col">
       <header class="jumbotron my-4">
-        <h2>Looking for something?</h2>
-        <h1>Get searching! Enter your ZIP Code or pick a category. </h1>
+        <h2>FIND A RESOURCE</h2>
+        <hr class="my-4">
+        <h1>Enter your ZIP Code </h1>
 
         <section id="search-two" class="search-wrap">
             <form action="/search" class="search-form">
               <i class="fas fa-search"></i>
-              <input type="search" name="posts" placeholder="Search By ZIP Code">
+              <input type="search" name="posts" placeholder="Search By ZIP Code" required>
               <input type="submit" value="search">
             </form>
           </section>
@@ -26,9 +27,11 @@
 
     </div>
       <div class="col">
+        <header class="jumbotron my-4">
         <div id="header-two">
 
-      <h3>I'm looking for...</h3>
+      <h2>SUBMIT A RESOURCE</h2>
+      <hr class="my-4">
       </div>
 
       <ul id="space_group" class="list-group list-group-flush">
@@ -41,7 +44,7 @@
           </li>
         <% }) %>
       </ul>
-
+</header>
 
       <% if(currentUser) { %>
         <% if(currentUser.isAdmin()) { %>

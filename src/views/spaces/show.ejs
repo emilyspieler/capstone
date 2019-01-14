@@ -10,6 +10,7 @@
     <main id="post_page" class="container">
       <div class="post_page_one">
 
+        <header class="jumbotron my-4">
       <h5>Community Resource : <%= space.title %></h4>
 
       <% if(currentUser) { %>
@@ -27,13 +28,16 @@
       <p><%= space.description %></p>
 
 </div>
+</header>
       <hr>
 
 <div class="post_page_two">
 
+<header class="jumbotron my-4">
       <h6>Submit A Resource...</h6>
       <a href="/spaces/<%= space.id %>/posts/new" id="new-resource" class="btn btn-success">New Resource</a>
 
+</header>
     </div>
 
     <hr>
@@ -41,12 +45,14 @@
       <ul class="list-group">
 
 
-
+<header class="jumbotron my-4">
           <h5>See what other users have entered: %></h5>
 
+</header>
 
         <% space.posts.forEach((post) => { %>
 
+<header class="jumbotron my-4">
           <div id="posts">
 
        <h4>Name: <%= post.title %></h4>
@@ -61,7 +67,7 @@
        <li id="item" class="list-group-item">
          <a href="/spaces/<%= space.id %>/posts/<%= post.id %>"> comments about <%= post.title %> </a>
        </li>
-
+</header>
 
        <% if(currentUser) { %>
 
@@ -76,6 +82,7 @@
 
        <% }) %>
      </ul>
+
 
     </main>
 

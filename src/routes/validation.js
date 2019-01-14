@@ -18,7 +18,7 @@ module.exports = {
       return next();
     }
   },
-  
+
   validateUsers(req, res, next) {
      if(req.method === "POST") {
 
@@ -50,6 +50,22 @@ module.exports = {
      } else {
        return next()
      }
-   }
+   },
+
+validateSearches(req, res, next) {
+      if(req.method === "GET") {
+
+        req.checkBody("zipcode", "must not be empty").isEmpty();
+      }
+
+      const errors = req.validationErrors();
+
+      if (errors) {
+        req.flash("error", errors);
+        return res.redirect(req.headers.referer);
+      } else {
+        return next();
+      }
+    }
 
 }
