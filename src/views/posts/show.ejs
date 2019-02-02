@@ -5,12 +5,13 @@
 
   </head>
 
-  <body  id="comments" >
+  <body id="comments" >
     <% include ../static/partials/navbar.ejs %>
     <% include ../static/partials/messages.ejs %>
 
-    <main id="commments" class="container">
-      <header class="jumbotron my-4">
+      <main id="commments" class="container">
+        <div id="content">
+        <header class="jumbotron my-4">
         <div id="comments-post">
 
       <h2 id="comments">Name: <%= post.title %></h2>
@@ -59,7 +60,7 @@
 
       <% } %> -->
 
-
+    </div>
     </main>
 
     <% include ../static/partials/baseScripts.ejs %>

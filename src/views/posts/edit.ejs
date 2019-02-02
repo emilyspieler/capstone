@@ -10,11 +10,11 @@
     <% include ../static/partials/messages.ejs %>
 
     <main id="edit-post" class="container">
+      <div id="content">
+      <header class="jumbotron my-4">
+        <h2 id="edit-post">Edit Resource</h2>
 
-<header class="jumbotron my-4">
-      <h2 id="edit-post">Edit Resource</h2>
-
-      <form action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/update" method="post">
+        <form action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/update" method="post">
         <div class="form-group">
           <label for="title">Resource title</label>
           <input value="<%= post.title %>" type="text" class="form-control" name="title" aria-describedby="titleHelp" placeholder="Enter Title">
@@ -25,6 +25,7 @@
         </div>
         <button id="edit-post" type="submit" class="btn btn-primary">Update</button>
       </form>
+      </div>
     </main>
   </header>
 

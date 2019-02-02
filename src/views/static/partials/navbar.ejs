@@ -1,34 +1,37 @@
 <nav class="navbar navbar-expand-sm navbar-dark">
   <!-- Brand -->
 
-  <a class="navbar-brand" tabindex="1" href="/">Community Resources</a>
+  <a class="navbar-brand" tabindex="2" href="/">Community Resources</a>
+
+  <a href="#content" class="skip" tabindex="1">Skip to content</a>
 
   <section id="search" class="search-wrap">
        <form action="/search" class="search-form">
          <i class="fas fa-search"></i>
-         <input type="search" name="posts" tabindex="2" placeholder="Search By Zipcode" required>
-         <input id="nav" type="submit" value="search" tabindex="3">
+         <input type="search" name="posts" tabindex="3" placeholder="Search By Zipcode" required>
+         <input id="nav" type="submit" value="search" tabindex="4">
        </form>
      </section>
 
+
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="/spaces/new_navbar" tabindex="4">Submit A Resource's Location</a>
+      <a class="nav-link" href="/spaces/new_navbar" tabindex="5">Submit A Resource's Location</a>
     </li>
 
       <% if(currentUser) { %>
 
     <li class="nav-item">
-      <a class="nav-link" href="/users/sign_out" tabindex="5">Sign Out</a>
+      <a class="nav-link" href="/users/sign_out" tabindex="6">Sign Out</a>
     </li>
 
     <% } else { %>
 
     <li class="nav-item">
-      <a class="nav-link" href="/users/sign_up" tabindex="6">Sign up</a>
+      <a class="nav-link" href="/users/sign_up" tabindex="7">Sign up</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/users/sign_in" tabindex="7">Sign in</a>
+      <a class="nav-link" href="/users/sign_in" tabindex="8">Sign in</a>
     </li>
     <% }%>
   </ul>

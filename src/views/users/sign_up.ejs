@@ -10,11 +10,11 @@
     <main id="signup" class="container">
 
       <% include ../static/partials/messages.ejs %>
+    <div id="content">
+      <header class="jumbotron my-4">
+        <h2 id="signup">Sign up</h2>
 
-<header class="jumbotron my-4">
-      <h2 id="signup">Sign up</h2>
-
-      <form action="/users" method="post">
+        <form action="/users" method="post">
 
         <div class="form-group">
           <label for="email">Email</label>
@@ -36,6 +36,7 @@
         <button id="signup" type="submit" class="btn btn-primary">Sign up</button>
       </form>
     </header>
+  </div>
 
   </main>
 
