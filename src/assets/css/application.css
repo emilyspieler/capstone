@@ -145,12 +145,14 @@ a:hover {
 }
 
 #search-two input[type=submit] {
-    padding:5px 15px;
-    background:#fff244;
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+  background:#fff244;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 .navbar-brand {
