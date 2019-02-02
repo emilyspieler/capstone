@@ -165,7 +165,6 @@ a:hover {
 
 input[type=text] {
     padding:5px;
-    border:2px solid #bd8c7d;
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
@@ -531,7 +530,6 @@ button#comments.btn.btn-primary {
 
 button#flag-two.btn.btn-primary {
   margin-top: 1%;
-  margin-top: 1%;
   background:#fff244;
   border:0 none;
   cursor:pointer;
@@ -556,23 +554,39 @@ button#flag-one.btn.btn-primary {
 }
 
 button.btn.btn-sm.btn-outline-danger {
-  background-color: #011627;
-  color: white;
-  margin-left: 5%;
+  margin-top: 1%;
+  background:#fff244;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  outline-color: : black;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  color: black;
 }
 
 a.btn.btn-warning {
   margin-top: 2%;
-  margin-bottom: 2%;
-  background-color: #011627;
-  color: white;
+  background:#fff244;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  outline-color: : black;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  color: black;
 }
 
 button.btn.btn-danger {
   margin-top: 2%;
-  margin-bottom: 2%;
-  background-color: #011627;
-  color: white;
+  background:#fff244;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  outline-color: : black;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  color: black;
 }
 
 
