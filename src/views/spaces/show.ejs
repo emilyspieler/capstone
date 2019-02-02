@@ -10,64 +10,65 @@
     <main id="post_page" class="container">
       <div class="post_page_one">
 
-        <header class="jumbotron my-4">
-      <h5>Community Resource : <%= space.title %></h4>
+        <div class="row">
+          <div class="col">
+            <header class="jumbotron my-4">
+              <h2>Community Resource : <%= space.title %></h2>
+              <% if(currentUser) { %>
+              <% if(currentUser.isAdmin()) { %>
+                <a href="/spaces/<%= space.id %>/edit" class="btn btn-warning">Edit</a>
+                <form style="display:initial" action="/spaces/<%= space.id %>/destroy" method="post">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+              <% } %>
+              <% } %>
 
-      <% if(currentUser) { %>
+        <p><%= space.description %></p>
+      </div>
+      </header>
 
-      <% if(currentUser.isAdmin()) { %>
-        <a href="/spaces/<%= space.id %>/edit" class="btn btn-warning">Edit</a>
-      <form style="display:initial" action="/spaces/<%= space.id %>/destroy" method="post">
-        <button type="submit" class="btn btn-danger">Delete</button>
-      </form>
-      <% } %>
-      <% } %>
-
-
-
-      <p><%= space.description %></p>
-
-</div>
-</header>
       <hr>
 
-<div class="post_page_two">
+          <div class="post_page_two">
+            <div class="col">
 
-<header class="jumbotron my-4">
-      <h6>Submit A Resource...</h6>
-      <a href="/spaces/<%= space.id %>/posts/new" id="new-resource" class="btn btn-success">New Resource</a>
+              <header class="jumbotron my-4">
+                <h2>Submit A Resource...</h2>
+                    <a href="/spaces/<%= space.id %>/posts/new" id="new-resource" class="btn btn-success">New Resource</a>
 
-</header>
+              </header>
+            </div>
+          </div>
+
+        <div class="col">
+          <header class="jumbotron my-4">
+            <h2>See what other users have entered: %></h2>
+          </header>
+        </div>
     </div>
-
     <hr>
 
-      <ul class="list-group">
+    <div class="row">
+      <div class="col">
+          <ul class="list-group">
+            <% space.posts.forEach((post) => { %>
+              <header class="jumbotron my-4">
+                <div id="posts">
+                  <h2>Name: <%= post.title %></h2>
+                  <p>Location Type: <%= post.spaceTitle %></p>
+                  <p>Location Address: <%= post.description %></p>
+                  <p>Location ZIP Code: <%= post.zipcode %></p>
+                  <p>Additional Details: <%= post.body %></p>
+                </div>
 
 
-<header class="jumbotron my-4">
-          <h5>See what other users have entered: %></h5>
+            <li id="item" class="list-group-item">
+              <div class="comments-item">
+              <a href="/spaces/<%= space.id %>/posts/<%= post.id %>"> comments about <%= post.title %> </a>
+              </div>
+            </li>
+          </header>
 
-</header>
-
-        <% space.posts.forEach((post) => { %>
-
-<header class="jumbotron my-4">
-          <div id="posts">
-
-       <h4>Name: <%= post.title %></h4>
-       <p>Location Type: <%= post.spaceTitle %></p>
-       <p>Location Address: <%= post.description %></p>
-       <p>Location ZIP Code: <%= post.zipcode %></p>
-       <p>Additional Details: <%= post.body %></p>
-
-</div>
-
-
-       <li id="item" class="list-group-item">
-         <a href="/spaces/<%= space.id %>/posts/<%= post.id %>"> comments about <%= post.title %> </a>
-       </li>
-</header>
 
        <% if(currentUser) { %>
 

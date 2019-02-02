@@ -12,41 +12,40 @@
 
 
     <main id="commments" class="container">
-<header class="jumbotron my-4">
-<div id="comments-post">
+      <header class="jumbotron my-4">
+        <div id="comments-post">
 
-      <h1 id="comments">Name: <%= post.title %></h1>
+      <h2 id="comments">Name: <%= post.title %></h2>
         <p>Location Type: <%= post.spaceTitle %></p>
-      <p>Location Address: <%= post.description %></p>
-      <p>Location ZIP Code: <%= post.zipcode %></p>
-      <p>Additional Details: <%= post.body %></p>
+        <p>Location Address: <%= post.description %></p>
+        <p>Location ZIP Code: <%= post.zipcode %></p>
+        <p>Additional Details: <%= post.body %></p>
     </div>
 
 
     <% if(currentUser) { %>
      <% include ../flags/flag.ejs %>
    <% } %>
+   </header>
 
       <hr id="comments">
 
       <section id="comment-form">
 
-       <!-- #1 -->
           <% if(currentUser) { %>
             <% include ../comments/new.ejs %>
           <% } %>
          </section>
-</header>
-       <!-- #2 -->
+
+         <header class="jumbotron my-4">
          <section id="comment-list">
           <% if(post.comments) { %>
             <% post.comments.forEach((comment) => { %>
-
-       <!-- #3 -->
               <%- include("../comments/show.ejs", {comment}) %>
             <% }) %>
           <% } %>
          </section>
+       </header>
 
 
   <!--    <% if(currentUser) { %>

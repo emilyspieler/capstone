@@ -7,19 +7,19 @@
     <% include ../static/partials/navbar.ejs %>
     <% include ../static/partials/messages.ejs %>
 
-<main id="search" class="container">
+    <main id="search" class="container">
 
 
         <% posts.forEach((post) => { %>
-<header class="jumbotron my-4">
+          <header class="jumbotron my-4">
 
-       <h1 id="search"><%= post.title %></h1>
-       <h6>Location type: <%= post.spaceTitle %></h6>
+       <h2 id="search"><%= post.title %></h2>
+       <h5>Location type: <%= post.spaceTitle %></h5>
        <p>Location Address: <%= post.description %></p>
        <p>Location ZIP Code: <%= post.zipcode %></p>
        <p>Additional Details: <%= post.body %></p>
 
-</header>
+        </header>
 
        <% if(currentUser) { %>
          <!--    <form style="display:initial" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/destroy" method="post">
@@ -27,9 +27,7 @@
        </form> -->
       <% } %>
 
-
     <% }) %>
-
 
     </main>
 
