@@ -12,8 +12,10 @@
   <header class="jumbotron my-4">
       <h2>Submit A Resource</h2>
 
+      <hr>
+
       <% spaces.forEach((space) => { %>
-    <!-- #2 -->
+
         <li class="list-group-item">
           <a href="/spaces/<%= space.id %>"> <%= space.title %> </a>
         </li>
