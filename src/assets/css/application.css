@@ -3,23 +3,19 @@ body {
   background-color: #e6e6e6;
 }
 
-/*font-family: 'Carrois Gothic SC', sans-serif;*/
-
 h1 {
   font-family: 'Carrois Gothic SC', sans-serif;
-  /*color: #ef4f4f; */
   font-size: 20px;
-  color: #5E0035;
+  color: #37475a;
 }
 
 h2 {
   font-family: 'Roboto', sans-serif;
-  /*color: #ef4f4f; */
   font-size: 40px;
   text-transform: uppercase;
   color: #2EC4B6;
   color: black;
- -webkit-text-fill-color: #2EC4B6;; /* Will override color (regardless of order) */
+ -webkit-text-fill-color: #2EC4B6;
  -webkit-text-stroke-width: 1px;
  -webkit-text-stroke-color: black;
 }
@@ -112,8 +108,7 @@ a:hover {
 
 #main-body {
   padding-top: 5%;
-  background-color: #e6e6e6; /* For browsers that do not support gradients */
-/*  background-image: linear-gradient(#f7f7f7, #dcdce5); /* Standard syntax (must be last) */
+  background-color: #e6e6e6; 
 }
 
 .jumbotron {
@@ -153,7 +148,7 @@ a:hover {
   font-family: 'Carrois Gothic SC', sans-serif;
   padding-top: 3px;
   padding-bottom: 3px;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
 .navbar-brand {
