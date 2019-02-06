@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% include ../static/partials/head.ejs %>
   </head>
   <body id="search">
+    <% include ../static/partials/navbar.ejs %>
+    <% include ../static/partials/messages.ejs %>
 
-<main id="search" class="container">
+    <main id="search" class="container">
+      <div id="content">
 
-        <% spaces.forEach((space) => { %>
+      <header class="jumbotron my-4">
+        <h1>There are currently no resources under this zipcode. Be the first by submitting one below</h1>
+        <a class="nav-link" href="/spaces/new_navbar" tabindex="5"><button>Submit A Resource's Location</button></a>
 
-      <h1 id="search">Name: <%= space.title %></h1>
+        </header>
 
        <% if(currentUser) { %>
          <!--    <form style="display:initial" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/destroy" method="post">
@@ -17,10 +23,10 @@
       <% } %>
 
 
-    <% }) %>
-
-
+    </div>
     </main>
+
+    <% include ../static/partials/baseScripts.ejs %>
 
   </body>
 </html>

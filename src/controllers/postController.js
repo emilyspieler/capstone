@@ -69,7 +69,9 @@ module.exports = {
           res.redirect(500, "/");
           } else {
               let { posts } = req.query;
-              console.log(posts);
+            /*  if (req.query.posts !== ({posts})) {
+              res.render('posts/show_zipcode_two', { spaces: spaces, posts: posts});
+            } */
               models.Post.findAll({
                 where: { zipcode: posts },
                 include: [
@@ -80,10 +82,11 @@ module.exports = {
                 ]
               })
 
-     .then(posts => res.render('posts/show_zipcode', { spaces: spaces, posts: posts}));
-    }
+            .then(posts => res.render('posts/show_zipcode', { spaces: spaces, posts: posts}));
+          }
       })
      },
+
 
    destroy(req, res, next){
      postQueries.deletePost(req.params.id, (err, deletedRecordsCount) => {
