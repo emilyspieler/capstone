@@ -1,12 +1,12 @@
 <header class="jumbotron my-4">
-<div class="comment-link">
-<form style="width:50%" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/comments/create" method="post">
-  <div class="form-group">
-    <label for="body">New Comment</label>
-    <textarea  class="form-control" name="body" aria-describedby="bodyHelp" placeholder="Enter comment"></textarea>
-    <small class="text-muted" id="bodyHelp">comment must be 5 or more characters in length.</small>
+  <div class="comment-link">
+    <form style="width:50%" action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/comments/create" method="post">
+      <div class="form-group">
+        <label for="body">New Comment</label>
+        <textarea  class="form-control" name="body" aria-describedby="bodyHelp" placeholder="Enter comment"></textarea>
+        <small class="text-muted" id="bodyHelp">comment must be 5 or more characters in length.</small>
+      </div>
+      <button id="comments" type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-  <button id="comments" type="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
 </header>

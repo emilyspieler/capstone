@@ -69,6 +69,7 @@ module.exports = {
           res.redirect(500, "/");
           } else {
               let { posts } = req.query;
+              console.log({zipcode: posts})
             /*  if (req.query.posts !== ({posts})) {
               res.render('posts/show_zipcode_two', { spaces: spaces, posts: posts});
             } */

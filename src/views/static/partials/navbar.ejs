@@ -8,7 +8,7 @@
   <section id="search" class="search-wrap">
        <form action="/search" class="search-form">
          <i class="fas fa-search"></i>
-         <input type="search" name="posts" tabindex="3" placeholder="Search By Zipcode" required>
+         <input type="search" name="posts" tabindex="3" maxlength="5" placeholder="Search By Zipcode" required>
          <input id="nav" type="submit" value="search" tabindex="4">
        </form>
      </section>
@@ -19,7 +19,7 @@
       <a class="nav-link" href="/spaces/new_navbar" tabindex="5">Submit A Resource's Location</a>
     </li>
 
-      <% if(currentUser) { %>
+    <% if(currentUser) { %>
 
     <li class="nav-item">
       <a class="nav-link" href="/users/sign_out" tabindex="6">Sign Out</a>
@@ -33,7 +33,7 @@
     <li class="nav-item">
       <a class="nav-link" href="/users/sign_in" tabindex="8">Sign in</a>
     </li>
-    <% }%>
+    <% } %>
   </ul>
 </nav>
 

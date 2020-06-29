@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,28 +6,24 @@
   <body id="edit-post">
     <% include ../static/partials/navbar.ejs %>
     <% include ../static/partials/messages.ejs %>
-
     <main id="edit-post" class="container">
       <div id="content">
       <header class="jumbotron my-4">
         <h2 id="edit-post">Edit Resource</h2>
-
         <form action="/spaces/<%= post.spaceId %>/posts/<%= post.id %>/update" method="post">
-        <div class="form-group">
-          <label for="title">Resource title</label>
-          <input value="<%= post.title %>" type="text" class="form-control" name="title" aria-describedby="titleHelp" placeholder="Enter Title">
-        </div>
-        <div class="form-group">
-          <label for="body">Resource body</label>
-          <textarea rows="4" class="form-control" name="body" placeholder="Enter Description"><%= post.body %></textarea>
-        </div>
+          <div class="form-group">
+            <label for="title">Resource title</label>
+            <input value="<%= post.title %>" type="text" class="form-control" name="title" aria-describedby="titleHelp" placeholder="Enter Title">
+          </div>
+          <div class="form-group">
+            <label for="body">Resource body</label>
+            <textarea rows="4" class="form-control" name="body" placeholder="Enter Description"><%= post.body %></textarea>
+          </div>
         <button id="edit-post" type="submit" class="btn btn-primary">Update</button>
       </form>
       </div>
     </main>
   </header>
-
     <% include ../static/partials/baseScripts.ejs %>
-
   </body>
 </html>
