@@ -54,7 +54,6 @@ module.exports = {
 
 validateSearches(req, res, next) {
       if(req.method === "GET") {
-
         req.checkBody("zipcode", "must not be empty").isEmpty();
       }
 

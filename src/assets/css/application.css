@@ -108,7 +108,7 @@ a:hover {
 
 #main-body {
   padding-top: 5%;
-  background-color: #e6e6e6; 
+  background-color: #e6e6e6;
 }
 
 .jumbotron {
@@ -139,7 +139,7 @@ a:hover {
   color: white;
 }
 
-#search-two input[type=submit] {
+#search-two input[type=search] {
   background:#fff244;
   border:0 none;
   cursor:pointer;
